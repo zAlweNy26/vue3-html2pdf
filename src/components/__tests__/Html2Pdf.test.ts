@@ -1,5 +1,4 @@
 import { describe, it, expect } from 'vitest'
-
 import { mount } from '@vue/test-utils'
 import Html2Pdf from '../Html2Pdf.vue'
 

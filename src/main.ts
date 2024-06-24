@@ -1,4 +1,4 @@
-import Html2Pdf from './components/Html2Pdf.vue'
-import useHtml2Pdf from './composables/useHtml2Pdf'
+import { createApp } from 'vue'
+import App from './App.vue'
 
-export { useHtml2Pdf, Html2Pdf }
+createApp(App).mount('#app')

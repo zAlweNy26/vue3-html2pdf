@@ -14,9 +14,10 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: fileURLToPath(new URL('./src/main.ts', import.meta.url)),
+      entry: fileURLToPath(new URL('./src/index.ts', import.meta.url)),
       name: 'Vue3HTML2PDF',
-      fileName: 'vue3-html2pdf'
+      formats: ['es', 'umd'],
+      fileName: (format) => `vue3-html2pdf.${format}.js`,
     },
     rollupOptions: {
       external: ['vue'],
