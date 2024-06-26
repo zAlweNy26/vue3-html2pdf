@@ -1,1 +1,1 @@
-{"version":3,"file":"Html2Pdf.vue.d.ts","sourceRoot":"","sources":["../../../src/components/Html2Pdf.vue"],"names":[],"mappings":";;;;;;;;;;;;AAwEA,wBAAwG;AAOxG,KAAK,uBAAuB,CAAC,CAAC,EAAE,CAAC,IAAI,CAAC,GAAG;IACpC,QAAO;QACN,MAAM,EAAE,CAAC,CAAC;KAEV,CAAA;CACD,CAAC"}
+{"version":3,"file":"Html2Pdf.vue.d.ts","sourceRoot":"","sources":["../../../src/components/Html2Pdf.vue"],"names":[],"mappings":";;;;;;;;;;;AAwEA,wBAAwG;AAOxG,KAAK,uBAAuB,CAAC,CAAC,EAAE,CAAC,IAAI,CAAC,GAAG;IACpC,QAAO;QACN,MAAM,EAAE,CAAC,CAAC;KAEV,CAAA;CACD,CAAC"}

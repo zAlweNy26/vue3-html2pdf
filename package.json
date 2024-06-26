@@ -27,6 +27,7 @@
     "lint": "eslint ./src --ext .vue,.ts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "html-to-image": "^1.11.11",
     "jspdf": "^2.5.1"
   },
   "devDependencies": {
