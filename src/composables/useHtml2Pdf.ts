@@ -22,7 +22,7 @@ export default function useHtml2Pdf(
         pdf = new jsPDF({
             unit: 'pt',
             orientation: 'landscape',
-            format: [clientWidth, clientHeight],
+            format: [clientWidth + (margin * 2), clientHeight + (margin * 2)],
             ...pdfOptions,
         })
         const imgData = await toPng(el, options ?? imageOptions)
