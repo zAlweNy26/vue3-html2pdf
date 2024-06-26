@@ -1,11 +1,14 @@
 <script setup lang="ts">
-const test = 'Hello I am Awesome library'
+import useHtml2Pdf from '@/composables/useHtml2Pdf'
+import { ref } from 'vue'
 
-defineEmits<{
-    convert: []
-}>()
+const pdfEl = ref<HTMLDivElement>()
+
+const { convert, save } = useHtml2Pdf(pdfEl)
 </script>
 
 <template>
-    <button type="button" @click="$emit('convert')">{{ test }}</button>
+  <div ref="pdfEl" v-bind="$attrs">
+    <slot :convert :save />
+  </div>
 </template>

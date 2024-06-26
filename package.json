@@ -6,15 +6,15 @@
     "type": "git",
     "url": "git+https://github.com/zAlweNy26/vue3-html2pdf.git"
   },
-  "files": ["dist"],
+  "files": ["dist", "types"],
   "main": "./dist/vue3-html2pdf.es.js",
   "module": "./dist/vue3-html2pdf.umd.js",
-  "types": "./dist/index.d.ts",
+  "types": "./types/src/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/vue3-html2pdf.es.js",
       "require": "./dist/vue3-html2pdf.umd.js",
-      "types": "./dist/index.d.ts"
+      "types": "./types/src/index.d.ts"
     }
   },
   "scripts": {
@@ -22,7 +22,7 @@
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "test": "vitest --run",
-    "build-only": "vue-tsc -d --emitDeclarationOnly && vite build",
+    "build-only": "vite build && vue-tsc -d --emitDeclarationOnly",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint ./src --ext .vue,.ts --fix --ignore-path .gitignore"
   },
