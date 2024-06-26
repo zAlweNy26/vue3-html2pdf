@@ -5,7 +5,7 @@ export default function useHtml2Pdf(
     element: MaybeRefOrGetter<HTMLElement | undefined | null>, 
     options?: Html2PdfWorkerOptions
 ) {
-    const converter = html2Pdf(options)
+    const converter = html2Pdf(undefined, options)
 
     return {
         save(fileName?: string) {
@@ -13,7 +13,7 @@ export default function useHtml2Pdf(
             if (!el) throw new Error('Element not found')
             return converter.from(el).save(fileName)
         },
-        convert(...args: Parameters<Html2PdfWorkerTarget['output']>) {
+        async convert(...args: Parameters<Html2PdfWorkerTarget['output']>) {
             const el = toValue(element)
             if (!el) throw new Error('Element not found')
             return converter.from(el).output(...args)

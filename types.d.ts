@@ -1,6 +1,6 @@
 
 declare module 'html2pdf.js' {
-    export default function html2pdf(opt?: Html2PdfWorkerOptions): Html2PdfWorkerRoot;
+    export default function html2pdf(element?: Html2PdfElement, opt?: Html2PdfWorkerOptions): Html2PdfWorkerRoot;
     export default function html2pdf(
         element: Html2PdfElement,
         opt?: Html2PdfWorkerOptions

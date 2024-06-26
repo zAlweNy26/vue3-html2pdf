@@ -5,7 +5,7 @@ import useHtml2Pdf from './composables/useHtml2Pdf'
 
 const divEl = ref<HTMLDivElement>()
 
-const { save } = useHtml2Pdf(divEl)
+const { save, convert } = useHtml2Pdf(divEl)
 </script>
 
 <template>
@@ -17,7 +17,11 @@ const { save } = useHtml2Pdf(divEl)
         </Html2Pdf>
         <div ref="divEl">
             <h2>Html2Pdf example composable</h2>
-            <button type="button" @click="save()">Convert</button>
+            <button type="button" @click="save()">Save</button>
+            <button type="button" @click="async () => {
+                const res = await convert('blob', undefined, 'pdf') as Blob
+                console.log(res)
+            }">Convert</button>
         </div>
     </div>
 </template>
