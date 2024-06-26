@@ -2,14 +2,19 @@
   "name": "vue3-html2pdf",
   "version": "0.0.1",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zAlweNy26/vue3-html2pdf.git"
+  },
   "files": ["dist"],
   "main": "./dist/vue3-html2pdf.es.js",
   "module": "./dist/vue3-html2pdf.umd.js",
-  "types": "./dist/src/index.d.ts",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/vue3-html2pdf.es.js",
-      "require": "./dist/vue3-html2pdf.umd.js"
+      "require": "./dist/vue3-html2pdf.umd.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "scripts": {
