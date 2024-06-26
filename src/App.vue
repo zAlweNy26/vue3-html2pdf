@@ -19,7 +19,7 @@ const { save, convert } = useHtml2Pdf(divEl)
             <h2>Html2Pdf example composable</h2>
             <button type="button" @click="save()">Save</button>
             <button type="button" @click="async () => {
-                const res = await convert('blob', undefined, 'pdf') as Blob
+                const res = await convert('blob')
                 console.log(res)
             }">Convert</button>
         </div>

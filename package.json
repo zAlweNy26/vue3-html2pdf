@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/zAlweNy26/vue3-html2pdf.git"
   },
-  "files": ["dist", "types", "types.d.ts"],
+  "files": ["dist", "types"],
   "main": "./dist/vue3-html2pdf.es.js",
   "module": "./dist/vue3-html2pdf.umd.js",
   "types": "./types/src/index.d.ts",
@@ -27,7 +27,8 @@
     "lint": "eslint ./src --ext .vue,.ts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "html2pdf.js": "^0.10.1"
+    "html-to-image": "^1.11.11",
+    "jspdf": "^2.5.1"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.10.3",
