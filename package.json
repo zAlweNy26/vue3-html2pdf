@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/zAlweNy26/vue3-html2pdf.git"
   },
-  "files": ["dist", "types"],
+  "files": ["dist", "types", "types.d.ts"],
   "main": "./dist/vue3-html2pdf.es.js",
   "module": "./dist/vue3-html2pdf.umd.js",
   "types": "./types/src/index.d.ts",
