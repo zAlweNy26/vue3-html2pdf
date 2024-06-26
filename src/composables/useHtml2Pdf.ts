@@ -9,11 +9,7 @@ export default function useHtml2Pdf(
     pdfOptions?: PdfOptions,
     imageOptions?: ImageOptions
 ) {
-    const pdf = new jsPDF({
-        unit: 'pt',
-        orientation: 'landscape',
-        ...pdfOptions,
-    })
+    let pdf = new jsPDF()
 
     async function convert(type?: 'arraybuffer', margin?: number, options?: ImageOptions): Promise<ArrayBuffer>;
     async function convert(type?: 'url', margin?: number, options?: ImageOptions): Promise<URL>;
@@ -23,6 +19,12 @@ export default function useHtml2Pdf(
         const el = toValue(element)
         if (!el) throw new Error('Element not found')
         const { clientHeight, clientWidth } = el
+        pdf = new jsPDF({
+            unit: 'pt',
+            orientation: 'landscape',
+            format: [clientWidth, clientHeight],
+            ...pdfOptions,
+        })
         const imgData = await toPng(el, options ?? imageOptions)
         pdf.addImage(imgData, "PNG", margin, margin, clientWidth, clientHeight)
         if (type === 'string') return pdf.output('datauristring')

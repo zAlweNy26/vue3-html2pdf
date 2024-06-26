@@ -356,8 +356,8 @@ var nl = /* @__PURE__ */ Zn(Or, 9, 0), rl = /* @__PURE__ */ Zn(Or, 9, 1), il = /
       x < u ? g = Ls(f, g, n.subarray(b, x)) : (f[b] = o, g = Ls(f, g, n.subarray(b, u)));
     }
   else {
-    for (var S = sl[t - 1], p = S >>> 13, O = S & 8191, I = (1 << r) - 1, R = new Qe(32768), _ = new Qe(I + 1), E = Math.ceil(r / 3), X = 2 * E, ot = function(zt) {
-      return (n[zt] ^ n[zt + 1] << E ^ n[zt + 2] << X) & I;
+    for (var S = sl[t - 1], p = S >>> 13, O = S & 8191, I = (1 << r) - 1, R = new Qe(32768), _ = new Qe(I + 1), E = Math.ceil(r / 3), X = 2 * E, ot = function(Ut) {
+      return (n[Ut] ^ n[Ut + 1] << E ^ n[Ut + 2] << X) & I;
     }, ut = new la(25e3), wt = new Qe(288), tt = new Qe(32), D = 0, gt = 0, b = 0, dt = 0, F = 0, P = 0; b < u; ++b) {
       var z = ot(b), q = b & 32767, at = _[z];
       if (R[q] = at, _[z] = q, F <= b) {
@@ -746,7 +746,7 @@ function Pi(n, t, r, i, s) {
   if (!(this instanceof Pi)) return new Pi(n, t, r, i, s);
   this.boundingBox = n, this.xStep = t, this.yStep = r, this.stream = "", this.cloneIndex = 0, Xc.call(this, i, s);
 }
-function Ut(n) {
+function zt(n) {
   var t, r = typeof arguments[0] == "string" ? arguments[0] : "p", i = arguments[1], s = arguments[2], o = arguments[3], u = [], h = 1, f = 16, g = "S", b = null;
   fe(n = n || {}) === "object" && (r = n.orientation, i = n.unit || i, s = n.format || s, o = n.compress || n.compressPdf || o, (b = n.encryption || null) !== null && (b.userPassword = b.userPassword || "", b.ownerPassword = b.ownerPassword || "", b.userPermissions = b.userPermissions || []), h = typeof n.userUnit == "number" ? Math.abs(n.userUnit) : 1, n.precision !== void 0 && (t = n.precision), n.floatPrecision !== void 0 && (f = n.floatPrecision), g = n.defaultPathOperation || "S"), u = n.filters || (o === !0 ? ["FlateEncode"] : u), i = i || "mm", r = ("" + (r || "P")).toLowerCase();
   var x = n.putOnlyUsedFonts || !1, S = {}, p = { internal: {}, __private__: {} };
@@ -858,7 +858,7 @@ function Ut(n) {
     return ("0" + parseInt(c)).slice(-2);
   }, W = p.__private__.padd2Hex = function(c) {
     return ("00" + (c = c.toString())).substr(c.length);
-  }, Y = 0, Q = [], et = [], rt = 0, At = [], xt = [], Ct = !1, Et = et, zt = function() {
+  }, Y = 0, Q = [], et = [], rt = 0, At = [], xt = [], Ct = !1, Et = et, Ut = function() {
     Y = 0, rt = 0, et = [], Q = [], At = [], er = Oe(), Sn = Oe();
   };
   p.__private__.setCustomOutputDestination = function(c) {
@@ -1111,7 +1111,7 @@ function Ut(n) {
     b !== null && (jt = Ge.encryptor(yt, 0));
     var qt = {};
     C === !0 && (C = ["FlateEncode"]);
-    var Kt = c.additionalKeyValues || [], Qt = (qt = Ut.API.processDataByFilters !== void 0 ? Ut.API.processDataByFilters(v, C) : { data: v, reverseChain: [] }).reverseChain + (Array.isArray(T) ? T.join(" ") : T.toString());
+    var Kt = c.additionalKeyValues || [], Qt = (qt = zt.API.processDataByFilters !== void 0 ? zt.API.processDataByFilters(v, C) : { data: v, reverseChain: [] }).reverseChain + (Array.isArray(T) ? T.join(" ") : T.toString());
     if (qt.data.length !== 0 && (Kt.push({ key: "Length", value: qt.data.length }), J === !0 && Kt.push({ key: "Length1", value: st })), Qt.length != 0) if (Qt.split("/").length - 1 == 1) Kt.push({ key: "Filter", value: Qt });
     else {
       Kt.push({ key: "Filter", value: "[" + Qt + "]" });
@@ -1296,7 +1296,7 @@ Q`), ln(J, !0), mn({ data: st, filters: Vn(), objectId: J }), B("endobj"), T;
     var c = Re(), v = function(T) {
       return T;
     };
-    for (var C in b !== null && (v = Ge.encryptor(c, 0)), B("<<"), B("/Producer (" + en(v("jsPDF " + Ut.version)) + ")"), Wt) Wt.hasOwnProperty(C) && Wt[C] && B("/" + C.substr(0, 1).toUpperCase() + C.substr(1) + " (" + en(v(Wt[C])) + ")");
+    for (var C in b !== null && (v = Ge.encryptor(c, 0)), B("<<"), B("/Producer (" + en(v("jsPDF " + zt.version)) + ")"), Wt) Wt.hasOwnProperty(C) && Wt[C] && B("/" + C.substr(0, 1).toUpperCase() + C.substr(1) + " (" + en(v(Wt[C])) + ")");
     B("/CreationDate (" + en(v(at)) + ")"), B(">>"), B("endobj");
   }, Mi = p.__private__.putCatalog = function(c) {
     var v = (c = c || {}).rootDictionaryObjId || er;
@@ -1342,7 +1342,7 @@ Q`), ln(J, !0), mn({ data: st, filters: Vn(), objectId: J }), B("endobj"), T;
     for (var v = 1; v <= Y; v++)
       typeof Q[v] == "function" ? B((c + Q[v]()).slice(-10) + " 00000 n ") : Q[v] !== void 0 ? B((c + Q[v]).slice(-10) + " 00000 n ") : B("0000000000 00000 n ");
   }, nr = p.__private__.buildDocument = function() {
-    zt(), ct(et), ue.publish("buildDocument"), ko(), Rr(), ma(), ga(), b !== null && yo(), _o(), Mi();
+    Ut(), ct(et), ue.publish("buildDocument"), ko(), Rr(), ma(), ga(), b !== null && yo(), _o(), Mi();
     var c = rt;
     return Fo(), Po(), B("startxref"), B("" + c), B("%%EOF"), ct(xt[j]), et.join(`
 `);
@@ -1782,7 +1782,7 @@ T* `) : c.join(` Tj
   }, Sa = p.__private__.setLineWidth = p.setLineWidth = function(c) {
     return qi = c, B(tt(P(c)) + " w"), this;
   };
-  p.__private__.setLineDash = Ut.API.setLineDash = Ut.API.setLineDashPattern = function(c, v) {
+  p.__private__.setLineDash = zt.API.setLineDash = zt.API.setLineDashPattern = function(c, v) {
     if (c = c || [], v = v || 0, isNaN(v) || !Array.isArray(c)) throw new Error("Invalid arguments passed to jsPDF.setLineDash");
     return c = c.map(function(C) {
       return tt(P(C));
@@ -1945,10 +1945,10 @@ T* `) : c.join(` Tj
         T(st.message);
       }
     });
-  }, Ut.API) Ut.API.hasOwnProperty(ui) && (ui === "events" && Ut.API.events.length ? function(c, v) {
+  }, zt.API) zt.API.hasOwnProperty(ui) && (ui === "events" && zt.API.events.length ? function(c, v) {
     var C, T, J;
     for (J = v.length - 1; J !== -1; J--) C = v[J][0], T = v[J][1], c.subscribe.apply(c, [C].concat(typeof T == "function" ? [T] : T));
-  }(ue, Ut.API.events) : p[ui] = Ut.API[ui]);
+  }(ue, zt.API.events) : p[ui] = zt.API[ui]);
   var zr = p.getPageWidth = function(c) {
     return (Yt[c = c || j].mediaBox.topRightX - Yt[c].mediaBox.bottomLeftX) / It;
   }, Wi = p.setPageWidth = function(c, v) {
@@ -2002,8 +2002,8 @@ Si.prototype.lsbFirstWord = function(n) {
   }
   for (t in n) n.hasOwnProperty(t) && r.indexOf(t) < 0 && i--;
   return i === 0;
-}, Ut.API = { events: [] }, Ut.version = "2.5.1";
-var Pe = Ut.API, Cs = 1, Jr = function(n) {
+}, zt.API = { events: [] }, zt.version = "2.5.1";
+var Pe = zt.API, Cs = 1, Jr = function(n) {
   return n.replace(/\\/g, "\\\\").replace(/\(/g, "\\(").replace(/\)/g, "\\)");
 }, Ai = function(n) {
   return n.replace(/\\\\/g, "\\").replace(/\\\(/g, "(").replace(/\\\)/g, ")");
@@ -2796,7 +2796,7 @@ var kl = Pe.addField = function(n) {
   var t;
   return (t = n).scope.internal.acroformPlugin.printedOut && (t.scope.internal.acroformPlugin.printedOut = !1, t.scope.internal.acroformPlugin.acroFormDictionaryRoot = null), t.scope.internal.acroformPlugin.acroFormDictionaryRoot.Fields.push(t), n.page = n.scope.internal.getCurrentPageInfo().pageNumber, this;
 };
-Pe.AcroFormChoiceField = ki, Pe.AcroFormListBox = Fi, Pe.AcroFormComboBox = Ii, Pe.AcroFormEditBox = io, Pe.AcroFormButton = Ue, Pe.AcroFormPushButton = ao, Pe.AcroFormRadioButton = Ci, Pe.AcroFormCheckBox = oo, Pe.AcroFormTextField = Yr, Pe.AcroFormPasswordField = so, Pe.AcroFormAppearance = Mt, Pe.AcroForm = { ChoiceField: ki, ListBox: Fi, ComboBox: Ii, EditBox: io, Button: Ue, PushButton: ao, RadioButton: Ci, CheckBox: oo, TextField: Yr, PasswordField: so, Appearance: Mt }, Ut.AcroForm = { ChoiceField: ki, ListBox: Fi, ComboBox: Ii, EditBox: io, Button: Ue, PushButton: ao, RadioButton: Ci, CheckBox: oo, TextField: Yr, PasswordField: so, Appearance: Mt };
+Pe.AcroFormChoiceField = ki, Pe.AcroFormListBox = Fi, Pe.AcroFormComboBox = Ii, Pe.AcroFormEditBox = io, Pe.AcroFormButton = Ue, Pe.AcroFormPushButton = ao, Pe.AcroFormRadioButton = Ci, Pe.AcroFormCheckBox = oo, Pe.AcroFormTextField = Yr, Pe.AcroFormPasswordField = so, Pe.AcroFormAppearance = Mt, Pe.AcroForm = { ChoiceField: ki, ListBox: Fi, ComboBox: Ii, EditBox: io, Button: Ue, PushButton: ao, RadioButton: Ci, CheckBox: oo, TextField: Yr, PasswordField: so, Appearance: Mt }, zt.AcroForm = { ChoiceField: ki, ListBox: Fi, ComboBox: Ii, EditBox: io, Button: Ue, PushButton: ao, RadioButton: Ci, CheckBox: oo, TextField: Yr, PasswordField: so, Appearance: Mt };
 function Qc(n) {
   return n.reduce(function(t, r, i) {
     return t[r] = i, t;
@@ -2982,7 +2982,7 @@ function Qc(n) {
     if (!ut() || F instanceof Uint8Array || (F = tt(F)), !(P = this["process" + z.toUpperCase()](F))) throw new Error("An unknown error occurred whilst processing the image");
     return P.fileType = z, P;
   };
-})(Ut.API), /**
+})(zt.API), /**
  * @license
  * Copyright (c) 2014 Steven Spungin (TwelveTone LLC)  steven@twelvetone.tv
  *
@@ -2993,7 +2993,7 @@ function(n) {
   var t = function(r) {
     if (r !== void 0 && r != "") return !0;
   };
-  Ut.API.events.push(["addPage", function(r) {
+  zt.API.events.push(["addPage", function(r) {
     this.internal.getPageInfo(r.pageNumber).pageContext.annotations = [];
   }]), n.events.push(["putPage", function(r) {
     for (var i, s, o, u = this.internal.getCoordinateString, h = this.internal.getVerticalCoordinateString, f = this.internal.getPageInfoByObjId(r.objId), g = r.pageContext.annotations, b = !1, x = 0; x < g.length && !b; x++) switch ((i = g[x]).type) {
@@ -3077,7 +3077,7 @@ function(n) {
     var i = this.internal.getFontSize();
     return this.getStringUnitWidth(r) * i / this.internal.scaleFactor;
   };
-}(Ut.API), /**
+}(zt.API), /**
  * @license
  * Copyright (c) 2017 Aras Abbasi
  *
@@ -3134,7 +3134,7 @@ function(n) {
     return typeof arguments[0] == "string" ? I : (arguments[0].text = I, arguments[0]);
   };
   n.events.push(["preProcessText", O]);
-}(Ut.API), Ut.API.autoPrint = function(n) {
+}(zt.API), zt.API.autoPrint = function(n) {
   var t;
   switch ((n = n || {}).variant = n.variant || "non-conform", n.variant) {
     case "javascript":
@@ -3199,7 +3199,7 @@ function(n) {
   }, n.events.push(["initialized", function() {
     this.canvas = new t(), this.canvas.pdf = this;
   }]);
-}(Ut.API), function(n) {
+}(zt.API), function(n) {
   var t = { left: 0, top: 0, bottom: 0, right: 0 }, r = !1, i = function() {
     this.internal.__cell__ === void 0 && (this.internal.__cell__ = {}, this.internal.__cell__.padding = 3, this.internal.__cell__.headerFunction = void 0, this.internal.__cell__.margins = Object.assign({}, t), this.internal.__cell__.margins.width = this.getPageWidth(), s.call(this));
   }, s = function() {
@@ -3349,7 +3349,7 @@ function(n) {
     }
     S.length > 0 && this.setTableHeaderRow(S), this.setFont(void 0, "normal"), r = !1;
   };
-}(Ut.API);
+}(zt.API);
 var tu = { italic: ["italic", "oblique", "normal"], oblique: ["oblique", "italic", "normal"], normal: ["normal", "oblique", "italic"] }, eu = ["ultra-condensed", "extra-condensed", "condensed", "semi-condensed", "normal", "semi-expanded", "expanded", "extra-expanded", "ultra-expanded"], Ps = Qc(eu), nu = [100, 200, 300, 400, 500, 600, 700, 800, 900], Fl = Qc(nu);
 function ks(n) {
   var t = n.family.replace(/"|'/g, "").toLowerCase(), r = function(o) {
@@ -3565,11 +3565,11 @@ var eo, Pc, kc, ps = ["times"];
       }
       return Ct;
     }
-    var zt = null;
+    var Ut = null;
     Object.defineProperty(this, "fontFaces", { get: function() {
-      return zt;
+      return Ut;
     }, set: function(ct) {
-      Ct = null, zt = ct;
+      Ct = null, Ut = ct;
     } }), Object.defineProperty(this, "font", { get: function() {
       return this.ctx.font;
     }, set: function(ct) {
@@ -3788,9 +3788,9 @@ var eo, Pc, kc, ps = ["times"];
     return this.margin[0] > 0 || this.margin[1] > 0 || this.margin[2] > 0 || this.margin[3] > 0;
   };
   x.prototype.drawImage = function(L, j, M, W, Y, Q, et, rt, At) {
-    var xt = this.pdf.getImageProperties(L), Ct = 1, Et = 1, zt = 1, ct = 1;
-    W !== void 0 && rt !== void 0 && (zt = rt / W, ct = At / Y, Ct = xt.width / W * rt / W, Et = xt.height / Y * At / Y), Q === void 0 && (Q = j, et = M, j = 0, M = 0), W !== void 0 && rt === void 0 && (rt = W, At = Y), W === void 0 && rt === void 0 && (rt = xt.width, At = xt.height);
-    for (var B, Xt = this.ctx.transform.decompose(), Bt = Z(Xt.rotate.shx), Lt = new f(), Nt = (Lt = (Lt = (Lt = Lt.multiply(Xt.translate)).multiply(Xt.skew)).multiply(Xt.scale)).applyToRectangle(new h(Q - j * zt, et - M * ct, W * Ct, Y * Et)), Ft = R.call(this, Nt), Pt = [], Rt = 0; Rt < Ft.length; Rt += 1) Pt.indexOf(Ft[Rt]) === -1 && Pt.push(Ft[Rt]);
+    var xt = this.pdf.getImageProperties(L), Ct = 1, Et = 1, Ut = 1, ct = 1;
+    W !== void 0 && rt !== void 0 && (Ut = rt / W, ct = At / Y, Ct = xt.width / W * rt / W, Et = xt.height / Y * At / Y), Q === void 0 && (Q = j, et = M, j = 0, M = 0), W !== void 0 && rt === void 0 && (rt = W, At = Y), W === void 0 && rt === void 0 && (rt = xt.width, At = xt.height);
+    for (var B, Xt = this.ctx.transform.decompose(), Bt = Z(Xt.rotate.shx), Lt = new f(), Nt = (Lt = (Lt = (Lt = Lt.multiply(Xt.translate)).multiply(Xt.skew)).multiply(Xt.scale)).applyToRectangle(new h(Q - j * Ut, et - M * ct, W * Ct, Y * Et)), Ft = R.call(this, Nt), Pt = [], Rt = 0; Rt < Ft.length; Rt += 1) Pt.indexOf(Ft[Rt]) === -1 && Pt.push(Ft[Rt]);
     if (X(Pt), this.autoPaging) for (var Gt = Pt[0], Zt = Pt[Pt.length - 1], te = Gt; te < Zt + 1; te++) {
       this.pdf.setPage(te);
       var ie = this.pdf.internal.pageSize.width - this.margin[3] - this.margin[1], de = te === 1 ? this.posY + this.margin[0] : this.margin[0], Wt = this.pdf.internal.pageSize.height - this.posY - this.margin[0] - this.margin[2], ee = this.pdf.internal.pageSize.height - this.margin[0] - this.margin[2], It = te === 1 ? 0 : Wt + (te - 2) * ee;
@@ -3852,9 +3852,9 @@ var eo, Pc, kc, ps = ["times"];
       return j - M;
     });
   }, ot = function(L, j) {
-    for (var M, W, Y = this.fillStyle, Q = this.strokeStyle, et = this.lineCap, rt = this.lineWidth, At = Math.abs(rt * this.ctx.transform.scaleX), xt = this.lineJoin, Ct = JSON.parse(JSON.stringify(this.path)), Et = JSON.parse(JSON.stringify(this.path)), zt = [], ct = 0; ct < Et.length; ct++) if (Et[ct].x !== void 0) for (var B = R.call(this, Et[ct]), Xt = 0; Xt < B.length; Xt += 1) zt.indexOf(B[Xt]) === -1 && zt.push(B[Xt]);
-    for (var Bt = 0; Bt < zt.length; Bt++) for (; this.pdf.internal.getNumberOfPages() < zt[Bt]; ) _.call(this);
-    if (X(zt), this.autoPaging) for (var Lt = zt[0], Nt = zt[zt.length - 1], Ft = Lt; Ft < Nt + 1; Ft++) {
+    for (var M, W, Y = this.fillStyle, Q = this.strokeStyle, et = this.lineCap, rt = this.lineWidth, At = Math.abs(rt * this.ctx.transform.scaleX), xt = this.lineJoin, Ct = JSON.parse(JSON.stringify(this.path)), Et = JSON.parse(JSON.stringify(this.path)), Ut = [], ct = 0; ct < Et.length; ct++) if (Et[ct].x !== void 0) for (var B = R.call(this, Et[ct]), Xt = 0; Xt < B.length; Xt += 1) Ut.indexOf(B[Xt]) === -1 && Ut.push(B[Xt]);
+    for (var Bt = 0; Bt < Ut.length; Bt++) for (; this.pdf.internal.getNumberOfPages() < Ut[Bt]; ) _.call(this);
+    if (X(Ut), this.autoPaging) for (var Lt = Ut[0], Nt = Ut[Ut.length - 1], Ft = Lt; Ft < Nt + 1; Ft++) {
       this.pdf.setPage(Ft), this.fillStyle = Y, this.strokeStyle = Q, this.lineCap = et, this.lineWidth = At, this.lineJoin = xt;
       var Pt = this.pdf.internal.pageSize.width - this.margin[3] - this.margin[1], Rt = Ft === 1 ? this.posY + this.margin[0] : this.margin[0], Gt = this.pdf.internal.pageSize.height - this.posY - this.margin[0] - this.margin[2], Zt = this.pdf.internal.pageSize.height - this.margin[0] - this.margin[2], te = Ft === 1 ? 0 : Gt + (Ft - 2) * Zt;
       if (this.ctx.clip_path.length !== 0) {
@@ -3896,8 +3896,8 @@ var eo, Pc, kc, ps = ["times"];
             M = [rt.x1 - Q[et - 1].x, rt.y1 - Q[et - 1].y, rt.x2 - Q[et - 1].x, rt.y2 - Q[et - 1].y, rt.x - Q[et - 1].x, rt.y - Q[et - 1].y], Y[Y.length - 1].deltas.push(M);
             break;
           case "qct":
-            var xt = Q[et - 1].x + 2 / 3 * (rt.x1 - Q[et - 1].x), Ct = Q[et - 1].y + 2 / 3 * (rt.y1 - Q[et - 1].y), Et = rt.x + 2 / 3 * (rt.x1 - rt.x), zt = rt.y + 2 / 3 * (rt.y1 - rt.y), ct = rt.x, B = rt.y;
-            M = [xt - Q[et - 1].x, Ct - Q[et - 1].y, Et - Q[et - 1].x, zt - Q[et - 1].y, ct - Q[et - 1].x, B - Q[et - 1].y], Y[Y.length - 1].deltas.push(M);
+            var xt = Q[et - 1].x + 2 / 3 * (rt.x1 - Q[et - 1].x), Ct = Q[et - 1].y + 2 / 3 * (rt.y1 - Q[et - 1].y), Et = rt.x + 2 / 3 * (rt.x1 - rt.x), Ut = rt.y + 2 / 3 * (rt.y1 - rt.y), ct = rt.x, B = rt.y;
+            M = [xt - Q[et - 1].x, Ct - Q[et - 1].y, Et - Q[et - 1].x, Ut - Q[et - 1].y, ct - Q[et - 1].x, B - Q[et - 1].y], Y[Y.length - 1].deltas.push(M);
             break;
           case "arc":
             Y.push({ deltas: [], abs: [], arc: !0 }), Array.isArray(Y[Y.length - 1].abs) && Y[Y.length - 1].abs.push(rt);
@@ -3983,7 +3983,7 @@ var eo, Pc, kc, ps = ["times"];
     }
     var M = this.pdf.getTextDimensions(L.text), W = wt.call(this, L.y), Y = tt.call(this, W) - M.h, Q = this.ctx.transform.applyToPoint(new u(L.x, W)), et = this.ctx.transform.decompose(), rt = new f();
     rt = (rt = (rt = rt.multiply(et.translate)).multiply(et.skew)).multiply(et.scale);
-    for (var At, xt, Ct, Et = this.ctx.transform.applyToRectangle(new h(L.x, W, M.w, M.h)), zt = rt.applyToRectangle(new h(L.x, Y, M.w, M.h)), ct = R.call(this, zt), B = [], Xt = 0; Xt < ct.length; Xt += 1) B.indexOf(ct[Xt]) === -1 && B.push(ct[Xt]);
+    for (var At, xt, Ct, Et = this.ctx.transform.applyToRectangle(new h(L.x, W, M.w, M.h)), Ut = rt.applyToRectangle(new h(L.x, Y, M.w, M.h)), ct = R.call(this, Ut), B = [], Xt = 0; Xt < ct.length; Xt += 1) B.indexOf(ct[Xt]) === -1 && B.push(ct[Xt]);
     if (X(B), this.autoPaging) for (var Bt = B[0], Lt = B[B.length - 1], Nt = Bt; Nt < Lt + 1; Nt++) {
       this.pdf.setPage(Nt);
       var Ft = Nt === 1 ? this.posY + this.margin[0] : this.margin[0], Pt = this.pdf.internal.pageSize.height - this.posY - this.margin[0] - this.margin[2], Rt = this.pdf.internal.pageSize.height - this.margin[2], Gt = Rt - this.margin[0], Zt = this.pdf.internal.pageSize.width - this.margin[1], te = Zt - this.margin[3], ie = Nt === 1 ? 0 : Pt + (Nt - 2) * Gt;
@@ -3991,7 +3991,7 @@ var eo, Pc, kc, ps = ["times"];
         var de = this.path;
         At = JSON.parse(JSON.stringify(this.ctx.clip_path)), this.path = E(At, this.posX + this.margin[3], -1 * ie + Ft), ut.call(this, "fill", !0), this.path = de;
       }
-      var Wt = E([JSON.parse(JSON.stringify(zt))], this.posX + this.margin[3], -ie + Ft + this.ctx.prevPageLastElemOffset)[0];
+      var Wt = E([JSON.parse(JSON.stringify(Ut))], this.posX + this.margin[3], -ie + Ft + this.ctx.prevPageLastElemOffset)[0];
       L.scale >= 0.01 && (xt = this.pdf.internal.getFontSize(), this.pdf.setFontSize(xt * L.scale), Ct = this.lineWidth, this.lineWidth = Ct * L.scale);
       var ee = this.autoPaging !== "text";
       if (ee || Wt.y + Wt.h <= Rt) {
@@ -4019,16 +4019,16 @@ var eo, Pc, kc, ps = ["times"];
     }
     return rt;
   }, lt = function(L, j, M) {
-    var W = (M - j) / 2, Y = L * Math.cos(W), Q = L * Math.sin(W), et = Y, rt = -Q, At = et * et + rt * rt, xt = At + et * Y + rt * Q, Ct = 4 / 3 * (Math.sqrt(2 * At * xt) - xt) / (et * Q - rt * Y), Et = et - Ct * rt, zt = rt + Ct * et, ct = Et, B = -zt, Xt = W + j, Bt = Math.cos(Xt), Lt = Math.sin(Xt);
-    return { x1: L * Math.cos(j), y1: L * Math.sin(j), x2: Et * Bt - zt * Lt, y2: Et * Lt + zt * Bt, x3: ct * Bt - B * Lt, y3: ct * Lt + B * Bt, x4: L * Math.cos(M), y4: L * Math.sin(M) };
+    var W = (M - j) / 2, Y = L * Math.cos(W), Q = L * Math.sin(W), et = Y, rt = -Q, At = et * et + rt * rt, xt = At + et * Y + rt * Q, Ct = 4 / 3 * (Math.sqrt(2 * At * xt) - xt) / (et * Q - rt * Y), Et = et - Ct * rt, Ut = rt + Ct * et, ct = Et, B = -Ut, Xt = W + j, Bt = Math.cos(Xt), Lt = Math.sin(Xt);
+    return { x1: L * Math.cos(j), y1: L * Math.sin(j), x2: Et * Bt - Ut * Lt, y2: Et * Lt + Ut * Bt, x3: ct * Bt - B * Lt, y3: ct * Lt + B * Bt, x4: L * Math.cos(M), y4: L * Math.sin(M) };
   }, Z = function(L) {
     return 180 * L / Math.PI;
   }, ft = function(L, j, M, W, Y, Q) {
-    var et = L + 0.5 * (M - L), rt = j + 0.5 * (W - j), At = Y + 0.5 * (M - Y), xt = Q + 0.5 * (W - Q), Ct = Math.min(L, Y, et, At), Et = Math.max(L, Y, et, At), zt = Math.min(j, Q, rt, xt), ct = Math.max(j, Q, rt, xt);
-    return new h(Ct, zt, Et - Ct, ct - zt);
+    var et = L + 0.5 * (M - L), rt = j + 0.5 * (W - j), At = Y + 0.5 * (M - Y), xt = Q + 0.5 * (W - Q), Ct = Math.min(L, Y, et, At), Et = Math.max(L, Y, et, At), Ut = Math.min(j, Q, rt, xt), ct = Math.max(j, Q, rt, xt);
+    return new h(Ct, Ut, Et - Ct, ct - Ut);
   }, ht = function(L, j, M, W, Y, Q, et, rt) {
-    var At, xt, Ct, Et, zt, ct, B, Xt, Bt, Lt, Nt, Ft, Pt, Rt, Gt = M - L, Zt = W - j, te = Y - M, ie = Q - W, de = et - Y, Wt = rt - Q;
-    for (xt = 0; xt < 41; xt++) Bt = (B = (Ct = L + (At = xt / 40) * Gt) + At * ((zt = M + At * te) - Ct)) + At * (zt + At * (Y + At * de - zt) - B), Lt = (Xt = (Et = j + At * Zt) + At * ((ct = W + At * ie) - Et)) + At * (ct + At * (Q + At * Wt - ct) - Xt), xt == 0 ? (Nt = Bt, Ft = Lt, Pt = Bt, Rt = Lt) : (Nt = Math.min(Nt, Bt), Ft = Math.min(Ft, Lt), Pt = Math.max(Pt, Bt), Rt = Math.max(Rt, Lt));
+    var At, xt, Ct, Et, Ut, ct, B, Xt, Bt, Lt, Nt, Ft, Pt, Rt, Gt = M - L, Zt = W - j, te = Y - M, ie = Q - W, de = et - Y, Wt = rt - Q;
+    for (xt = 0; xt < 41; xt++) Bt = (B = (Ct = L + (At = xt / 40) * Gt) + At * ((Ut = M + At * te) - Ct)) + At * (Ut + At * (Y + At * de - Ut) - B), Lt = (Xt = (Et = j + At * Zt) + At * ((ct = W + At * ie) - Et)) + At * (ct + At * (Q + At * Wt - ct) - Xt), xt == 0 ? (Nt = Bt, Ft = Lt, Pt = Bt, Rt = Lt) : (Nt = Math.min(Nt, Bt), Ft = Math.min(Ft, Lt), Pt = Math.max(Pt, Bt), Rt = Math.max(Rt, Lt));
     return new h(Math.round(Nt), Math.round(Ft), Math.round(Pt - Nt), Math.round(Rt - Ft));
   }, kt = function() {
     if (this.prevLineDash || this.ctx.lineDash.length || this.ctx.lineDashOffset) {
@@ -4036,7 +4036,7 @@ var eo, Pc, kc, ps = ["times"];
       this.prevLineDash !== M && (this.pdf.setLineDash(this.ctx.lineDash, this.ctx.lineDashOffset), this.prevLineDash = M);
     }
   };
-})(Ut.API), /**
+})(zt.API), /**
  * @license
  * jsPDF filters PlugIn
  * Copyright (c) 2014 Aras Abbasi
@@ -4098,7 +4098,7 @@ function(n) {
     }
     return { data: f, reverseChain: g.reverse().join(" ") };
   };
-}(Ut.API), /**
+}(zt.API), /**
  * @license
  * jsPDF fileloading PlugIn
  * Copyright (c) 2018 Aras Abbasi (aras.abbasi@gmail.com)
@@ -4128,7 +4128,7 @@ function(n) {
       return h;
     }(t, r, i);
   }, n.loadImageFile = n.loadFile;
-}(Ut.API), function(n) {
+}(zt.API), function(n) {
   function t() {
     return (Ht.html2canvas ? Promise.resolve(Ht.html2canvas) : import("./html2canvas.esm-d2sM-0Wm.js")).catch(function(u) {
       return Promise.reject(new Error("Could not load html2canvas: " + u));
@@ -4335,7 +4335,7 @@ function(n) {
       return Math.floor(f * g / 72 * 96);
     }
     return this.then(function() {
-      (u = u || Ut.getPageSize(this.opt.jsPDF)).hasOwnProperty("inner") || (u.inner = { width: u.width - this.opt.margin[1] - this.opt.margin[3], height: u.height - this.opt.margin[0] - this.opt.margin[2] }, u.inner.px = { width: h(u.inner.width, u.k), height: h(u.inner.height, u.k) }, u.inner.ratio = u.inner.height / u.inner.width), this.prop.pageSize = u;
+      (u = u || zt.getPageSize(this.opt.jsPDF)).hasOwnProperty("inner") || (u.inner = { width: u.width - this.opt.margin[1] - this.opt.margin[3], height: u.height - this.opt.margin[0] - this.opt.margin[2] }, u.inner.px = { width: h(u.inner.width, u.k), height: h(u.inner.height, u.k) }, u.inner.ratio = u.inner.height / u.inner.width), this.prop.pageSize = u;
     });
   }, o.prototype.setProgress = function(u, h, f, g) {
     return u != null && (this.progress.val = u), h != null && (this.progress.state = h), f != null && (this.progress.n = f), g != null && (this.progress.stack = g), this.progress.ratio = this.progress.val / this.progress.state, this;
@@ -4371,7 +4371,7 @@ function(n) {
     return this.then(function() {
       throw new Error(u);
     });
-  }, o.prototype.using = o.prototype.set, o.prototype.saveAs = o.prototype.save, o.prototype.export = o.prototype.output, o.prototype.run = o.prototype.then, Ut.getPageSize = function(u, h, f) {
+  }, o.prototype.using = o.prototype.set, o.prototype.saveAs = o.prototype.save, o.prototype.export = o.prototype.output, o.prototype.run = o.prototype.then, zt.getPageSize = function(u, h, f) {
     if (fe(u) === "object") {
       var g = u;
       u = g.orientation, h = g.unit || h, f = g.format || f;
@@ -4423,7 +4423,7 @@ function(n) {
     var f = new o(h);
     return h.worker ? f : f.from(u).doCallback();
   };
-}(Ut.API), Ut.API.addJS = function(n) {
+}(zt.API), zt.API.addJS = function(n) {
   return kc = n, this.internal.events.subscribe("postPutResources", function() {
     eo = this.internal.newObject(), this.internal.out("<<"), this.internal.out("/Names [(EmbeddedJS) " + (eo + 1) + " 0 R]"), this.internal.out(">>"), this.internal.out("endobj"), Pc = this.internal.newObject(), this.internal.out("<<"), this.internal.out("/S /JavaScript"), this.internal.out("/JS (" + kc + ")"), this.internal.out(">>"), this.internal.out("endobj");
   }), this.internal.events.subscribe("putCatalog", function() {
@@ -4507,7 +4507,7 @@ endobj\r
       return i.count;
     };
   }]);
-}(Ut.API), /**
+}(zt.API), /**
  * @license
  *
  * Licensed under the MIT License.
@@ -4541,7 +4541,7 @@ function(n) {
     }
     return b;
   };
-}(Ut.API);
+}(zt.API);
 var Ni, no, Fc, Ic, Cc, El = function() {
   var n, t, r;
   function i(o) {
@@ -4946,12 +4946,12 @@ function gs(n) {
     M = O[0], Ct == 0 ? lt(W[0]) : (lt(W[S[Q = 32767 + Ct]]), lt(x[Q]));
     for (var Et = 63; Et > 0 && O[Et] == 0; ) Et--;
     if (Et == 0) return lt(et), M;
-    for (var zt, ct = 1; ct <= Et; ) {
+    for (var Ut, ct = 1; ct <= Et; ) {
       for (var B = ct; O[ct] == 0 && ct <= Et; ) ++ct;
       var Xt = ct - B;
       if (Xt >= 16) {
-        zt = Xt >> 4;
-        for (var Bt = 1; Bt <= zt; ++Bt) lt(rt);
+        Ut = Xt >> 4;
+        for (var Bt = 1; Bt <= Ut; ++Bt) lt(rt);
         Xt &= 15;
       }
       Q = 32767 + O[ct], lt(Y[(Xt << 4) + S[Q]]), lt(x[Q]), ct++;
@@ -4995,9 +4995,9 @@ function gs(n) {
     }(), ft(65498), ft(12), Z(3), Z(1), Z(0), Z(2), Z(17), Z(3), Z(17), Z(0), Z(63), Z(0);
     var M = 0, W = 0, Y = 0;
     R = 0, _ = 7, this.encode.displayName = "_encode_";
-    for (var Q, et, rt, At, xt, Ct, Et, zt, ct, B = L.data, Xt = L.width, Bt = L.height, Lt = 4 * Xt, Nt = 0; Nt < Bt; ) {
+    for (var Q, et, rt, At, xt, Ct, Et, Ut, ct, B = L.data, Xt = L.width, Bt = L.height, Lt = 4 * Xt, Nt = 0; Nt < Bt; ) {
       for (Q = 0; Q < Lt; ) {
-        for (xt = Lt * Nt + Q, Et = -1, zt = 0, ct = 0; ct < 64; ct++) Ct = xt + (zt = ct >> 3) * Lt + (Et = 4 * (7 & ct)), Nt + zt >= Bt && (Ct -= Lt * (Nt + 1 + zt - Bt)), Q + Et >= Lt && (Ct -= Q + Et - Lt + 4), et = B[Ct++], rt = B[Ct++], At = B[Ct++], E[ct] = (wt[et] + wt[rt + 256 >> 0] + wt[At + 512 >> 0] >> 16) - 128, X[ct] = (wt[et + 768 >> 0] + wt[rt + 1024 >> 0] + wt[At + 1280 >> 0] >> 16) - 128, ot[ct] = (wt[et + 1280 >> 0] + wt[rt + 1536 >> 0] + wt[At + 1792 >> 0] >> 16) - 128;
+        for (xt = Lt * Nt + Q, Et = -1, Ut = 0, ct = 0; ct < 64; ct++) Ct = xt + (Ut = ct >> 3) * Lt + (Et = 4 * (7 & ct)), Nt + Ut >= Bt && (Ct -= Lt * (Nt + 1 + Ut - Bt)), Q + Et >= Lt && (Ct -= Q + Et - Lt + 4), et = B[Ct++], rt = B[Ct++], At = B[Ct++], E[ct] = (wt[et] + wt[rt + 256 >> 0] + wt[At + 512 >> 0] >> 16) - 128, X[ct] = (wt[et + 768 >> 0] + wt[rt + 1024 >> 0] + wt[At + 1280 >> 0] >> 16) - 128, ot[ct] = (wt[et + 1280 >> 0] + wt[rt + 1536 >> 0] + wt[At + 1792 >> 0] >> 16) - 128;
         M = ht(E, g, M, t, i), W = ht(X, b, W, r, s), Y = ht(ot, b, Y, r, s), Q += 32;
       }
       Nt += 8;
@@ -5182,7 +5182,7 @@ function Oc(n) {
     function Et(e, a) {
       return xt(e, a) | xt(e, a + 2) << 16;
     }
-    function zt(e, a) {
+    function Ut(e, a) {
       var l = 1 << a;
       return t(e != null), t(0 < a), e.X = o(l), e.X == null ? 0 : (e.Mb = 32 - a, e.Xa = a, 1);
     }
@@ -5696,7 +5696,7 @@ function Oc(n) {
           break t;
         }
         if (0 < K) {
-          if (k.ua = 1 << K, !zt(k.Wa, K)) {
+          if (k.ua = 1 << K, !Ut(k.Wa, K)) {
             d.a = 1, w = 0;
             break t;
           }
@@ -6771,7 +6771,7 @@ function Oc(n) {
                           break n;
                         }
                         if (!Rr(d, l.width) || l.da) break n;
-                        if ((l.da || ce(d.ca.S)) && J(), 11 > d.ca.S || (alert("todo:WebPInitConvertARGBToYUV"), d.ca.f.kb.F != null && J()), d.Pb && 0 < d.s.ua && d.s.vb.X == null && !zt(d.s.vb, d.s.Wa.Xa)) {
+                        if ((l.da || ce(d.ca.S)) && J(), 11 > d.ca.S || (alert("todo:WebPInitConvertARGBToYUV"), d.ca.f.kb.F != null && J()), d.Pb && 0 < d.s.ua && d.s.vb.X == null && !Ut(d.s.vb, d.s.Wa.Xa)) {
                           d.a = 1;
                           break n;
                         }
@@ -6995,14 +6995,14 @@ function Oc(n) {
       return at === this.decode.FLATE_DECODE && (nt = "/Predictor " + L + " "), nt += "/Colors " + ot + " /BitsPerComponent " + _ + " /Columns " + E.width, (this.__addimage__.isArrayBuffer(S) || this.__addimage__.isArrayBufferView(S)) && (S = this.__addimage__.arrayBufferToBinaryString(S)), (wt && this.__addimage__.isArrayBuffer(wt) || this.__addimage__.isArrayBufferView(wt)) && (wt = this.__addimage__.arrayBufferToBinaryString(wt)), { alias: O, data: S, index: p, filter: at, decodeParameters: nt, transparency: X, palette: ut, sMask: wt, predictor: L, width: E.width, height: E.height, bitsPerComponent: _, colorSpace: R };
     }
   };
-})(Ut.API), function(n) {
+})(zt.API), function(n) {
   n.processGIF89A = function(t, r, i, s) {
     var o = new Ml(t), u = o.width, h = o.height, f = [];
     o.decodeAndBlitFrameRGBA(0, f);
     var g = { data: f, width: u, height: h }, b = new gs(100).encode(g, 100);
     return n.processJPEG.call(this, b, r, i, s);
   }, n.processGIF87A = n.processGIF89A;
-}(Ut.API), qn.prototype.parseHeader = function() {
+}(zt.API), qn.prototype.parseHeader = function() {
   if (this.fileSize = this.datav.getUint32(this.pos, !0), this.pos += 4, this.reserved = this.datav.getUint32(this.pos, !0), this.pos += 4, this.offset = this.datav.getUint32(this.pos, !0), this.pos += 4, this.headerSize = this.datav.getUint32(this.pos, !0), this.pos += 4, this.width = this.datav.getUint32(this.pos, !0), this.pos += 4, this.height = this.datav.getInt32(this.pos, !0), this.pos += 4, this.planes = this.datav.getUint16(this.pos, !0), this.pos += 2, this.bitPP = this.datav.getUint16(this.pos, !0), this.pos += 2, this.compress = this.datav.getUint32(this.pos, !0), this.pos += 4, this.rawSize = this.datav.getUint32(this.pos, !0), this.pos += 4, this.hr = this.datav.getUint32(this.pos, !0), this.pos += 4, this.vr = this.datav.getUint32(this.pos, !0), this.pos += 4, this.colors = this.datav.getUint32(this.pos, !0), this.pos += 4, this.importantColors = this.datav.getUint32(this.pos, !0), this.pos += 4, this.bitPP === 16 && this.is_with_alpha && (this.bitPP = 15), this.bitPP < 15) {
     var n = this.colors === 0 ? 1 << this.bitPP : this.colors;
     this.palette = new Array(n);
@@ -7096,7 +7096,7 @@ function(n) {
     var o = new qn(t, !1), u = o.width, h = o.height, f = { data: o.getData(), width: u, height: h }, g = new gs(100).encode(f, 100);
     return n.processJPEG.call(this, g, r, i, s);
   };
-}(Ut.API), Oc.prototype.getData = function() {
+}(zt.API), Oc.prototype.getData = function() {
   return this.data;
 }, /**
  * @license
@@ -7110,18 +7110,18 @@ function(n) {
     var o = new Oc(t), u = o.width, h = o.height, f = { data: o.getData(), width: u, height: h }, g = new gs(100).encode(f, 100);
     return n.processJPEG.call(this, g, r, i, s);
   };
-}(Ut.API), Ut.API.processRGBA = function(n, t, r) {
+}(zt.API), zt.API.processRGBA = function(n, t, r) {
   for (var i = n.data, s = i.length, o = new Uint8Array(s / 4 * 3), u = new Uint8Array(s / 4), h = 0, f = 0, g = 0; g < s; g += 4) {
     var b = i[g], x = i[g + 1], S = i[g + 2], p = i[g + 3];
     o[h++] = b, o[h++] = x, o[h++] = S, u[f++] = p;
   }
   var O = this.__addimage__.arrayBufferToBinaryString(o);
   return { alpha: this.__addimage__.arrayBufferToBinaryString(u), data: O, index: t, alias: r, colorSpace: "DeviceRGB", bitsPerComponent: 8, width: n.width, height: n.height };
-}, Ut.API.setLanguage = function(n) {
+}, zt.API.setLanguage = function(n) {
   return this.internal.languageSettings === void 0 && (this.internal.languageSettings = {}, this.internal.languageSettings.isSubscribed = !1), { af: "Afrikaans", sq: "Albanian", ar: "Arabic (Standard)", "ar-DZ": "Arabic (Algeria)", "ar-BH": "Arabic (Bahrain)", "ar-EG": "Arabic (Egypt)", "ar-IQ": "Arabic (Iraq)", "ar-JO": "Arabic (Jordan)", "ar-KW": "Arabic (Kuwait)", "ar-LB": "Arabic (Lebanon)", "ar-LY": "Arabic (Libya)", "ar-MA": "Arabic (Morocco)", "ar-OM": "Arabic (Oman)", "ar-QA": "Arabic (Qatar)", "ar-SA": "Arabic (Saudi Arabia)", "ar-SY": "Arabic (Syria)", "ar-TN": "Arabic (Tunisia)", "ar-AE": "Arabic (U.A.E.)", "ar-YE": "Arabic (Yemen)", an: "Aragonese", hy: "Armenian", as: "Assamese", ast: "Asturian", az: "Azerbaijani", eu: "Basque", be: "Belarusian", bn: "Bengali", bs: "Bosnian", br: "Breton", bg: "Bulgarian", my: "Burmese", ca: "Catalan", ch: "Chamorro", ce: "Chechen", zh: "Chinese", "zh-HK": "Chinese (Hong Kong)", "zh-CN": "Chinese (PRC)", "zh-SG": "Chinese (Singapore)", "zh-TW": "Chinese (Taiwan)", cv: "Chuvash", co: "Corsican", cr: "Cree", hr: "Croatian", cs: "Czech", da: "Danish", nl: "Dutch (Standard)", "nl-BE": "Dutch (Belgian)", en: "English", "en-AU": "English (Australia)", "en-BZ": "English (Belize)", "en-CA": "English (Canada)", "en-IE": "English (Ireland)", "en-JM": "English (Jamaica)", "en-NZ": "English (New Zealand)", "en-PH": "English (Philippines)", "en-ZA": "English (South Africa)", "en-TT": "English (Trinidad & Tobago)", "en-GB": "English (United Kingdom)", "en-US": "English (United States)", "en-ZW": "English (Zimbabwe)", eo: "Esperanto", et: "Estonian", fo: "Faeroese", fj: "Fijian", fi: "Finnish", fr: "French (Standard)", "fr-BE": "French (Belgium)", "fr-CA": "French (Canada)", "fr-FR": "French (France)", "fr-LU": "French (Luxembourg)", "fr-MC": "French (Monaco)", "fr-CH": "French (Switzerland)", fy: "Frisian", fur: "Friulian", gd: "Gaelic (Scots)", "gd-IE": "Gaelic (Irish)", gl: "Galacian", ka: "Georgian", de: "German (Standard)", "de-AT": "German (Austria)", "de-DE": "German (Germany)", "de-LI": "German (Liechtenstein)", "de-LU": "German (Luxembourg)", "de-CH": "German (Switzerland)", el: "Greek", gu: "Gujurati", ht: "Haitian", he: "Hebrew", hi: "Hindi", hu: "Hungarian", is: "Icelandic", id: "Indonesian", iu: "Inuktitut", ga: "Irish", it: "Italian (Standard)", "it-CH": "Italian (Switzerland)", ja: "Japanese", kn: "Kannada", ks: "Kashmiri", kk: "Kazakh", km: "Khmer", ky: "Kirghiz", tlh: "Klingon", ko: "Korean", "ko-KP": "Korean (North Korea)", "ko-KR": "Korean (South Korea)", la: "Latin", lv: "Latvian", lt: "Lithuanian", lb: "Luxembourgish", mk: "North Macedonia", ms: "Malay", ml: "Malayalam", mt: "Maltese", mi: "Maori", mr: "Marathi", mo: "Moldavian", nv: "Navajo", ng: "Ndonga", ne: "Nepali", no: "Norwegian", nb: "Norwegian (Bokmal)", nn: "Norwegian (Nynorsk)", oc: "Occitan", or: "Oriya", om: "Oromo", fa: "Persian", "fa-IR": "Persian/Iran", pl: "Polish", pt: "Portuguese", "pt-BR": "Portuguese (Brazil)", pa: "Punjabi", "pa-IN": "Punjabi (India)", "pa-PK": "Punjabi (Pakistan)", qu: "Quechua", rm: "Rhaeto-Romanic", ro: "Romanian", "ro-MO": "Romanian (Moldavia)", ru: "Russian", "ru-MO": "Russian (Moldavia)", sz: "Sami (Lappish)", sg: "Sango", sa: "Sanskrit", sc: "Sardinian", sd: "Sindhi", si: "Singhalese", sr: "Serbian", sk: "Slovak", sl: "Slovenian", so: "Somani", sb: "Sorbian", es: "Spanish", "es-AR": "Spanish (Argentina)", "es-BO": "Spanish (Bolivia)", "es-CL": "Spanish (Chile)", "es-CO": "Spanish (Colombia)", "es-CR": "Spanish (Costa Rica)", "es-DO": "Spanish (Dominican Republic)", "es-EC": "Spanish (Ecuador)", "es-SV": "Spanish (El Salvador)", "es-GT": "Spanish (Guatemala)", "es-HN": "Spanish (Honduras)", "es-MX": "Spanish (Mexico)", "es-NI": "Spanish (Nicaragua)", "es-PA": "Spanish (Panama)", "es-PY": "Spanish (Paraguay)", "es-PE": "Spanish (Peru)", "es-PR": "Spanish (Puerto Rico)", "es-ES": "Spanish (Spain)", "es-UY": "Spanish (Uruguay)", "es-VE": "Spanish (Venezuela)", sx: "Sutu", sw: "Swahili", sv: "Swedish", "sv-FI": "Swedish (Finland)", "sv-SV": "Swedish (Sweden)", ta: "Tamil", tt: "Tatar", te: "Teluga", th: "Thai", tig: "Tigre", ts: "Tsonga", tn: "Tswana", tr: "Turkish", tk: "Turkmen", uk: "Ukrainian", hsb: "Upper Sorbian", ur: "Urdu", ve: "Venda", vi: "Vietnamese", vo: "Volapuk", wa: "Walloon", cy: "Welsh", xh: "Xhosa", ji: "Yiddish", zu: "Zulu" }[n] !== void 0 && (this.internal.languageSettings.languageCode = n, this.internal.languageSettings.isSubscribed === !1 && (this.internal.events.subscribe("putCatalog", function() {
     this.internal.write("/Lang (" + this.internal.languageSettings.languageCode + ")");
   }), this.internal.languageSettings.isSubscribed = !0)), this;
-}, Ni = Ut.API, no = Ni.getCharWidthsArray = function(n, t) {
+}, Ni = zt.API, no = Ni.getCharWidthsArray = function(n, t) {
   var r, i, s = (t = t || {}).font || this.internal.getFont(), o = t.fontSize || this.internal.getFontSize(), u = t.charSpace || this.internal.getCharSpace(), h = t.widths ? t.widths : s.metadata.Unicode.widths, f = h.fof ? h.fof : 1, g = t.kerning ? t.kerning : s.metadata.Unicode.kerning, b = g.fof ? g.fof : 1, x = t.doKerning !== !1, S = 0, p = n.length, O = 0, I = h[0] || f, R = [];
   for (r = 0; r < p; r++) i = n.charCodeAt(r), typeof s.metadata.widthOfString == "function" ? R.push((s.metadata.widthOfGlyph(s.metadata.characterToGlyph(i)) + u * (1e3 / o) || 0) / 1e3) : (S = x && fe(g[i]) === "object" && !isNaN(parseInt(g[i][O], 10)) ? g[i][O] / b : 0, R.push((h[i] || I) / f + S)), O = i;
   return R;
@@ -7207,7 +7207,7 @@ function(n) {
     var O = g.Unicode[S.postScriptName];
     O && (S.metadata.Unicode.encoding = O, S.encoding = O.codePages[0]);
   }]);
-}(Ut.API), /**
+}(zt.API), /**
  * @license
  * Licensed under the MIT License.
  * http://opensource.org/licenses/mit-license
@@ -7227,7 +7227,7 @@ function(n) {
       })(s, i);
     }
   }]);
-}(Ut), /** @license
+}(zt), /** @license
  * Copyright (c) 2012 Willow Systems Corporation, https://github.com/willowsystems
  *
  * Permission is hereby granted, free of charge, to any person obtaining
@@ -7252,13 +7252,13 @@ function(n) {
  */
 function(n) {
   function t() {
-    return (Ht.canvg ? Promise.resolve(Ht.canvg) : import("./index.es-eifXukt3.js")).catch(function(r) {
+    return (Ht.canvg ? Promise.resolve(Ht.canvg) : import("./index.es-mA2HNct6.js")).catch(function(r) {
       return Promise.reject(new Error("Could not load canvg: " + r));
     }).then(function(r) {
       return r.default ? r.default : r;
     });
   }
-  Ut.API.addSvgAsImage = function(r, i, s, o, u, h, f, g) {
+  zt.API.addSvgAsImage = function(r, i, s, o, u, h, f, g) {
     if (isNaN(i) || isNaN(s)) throw ve.error("jsPDF.addSvgAsImage: Invalid coordinates", arguments), new Error("Invalid coordinates passed to jsPDF.addSvgAsImage");
     if (isNaN(o) || isNaN(u)) throw ve.error("jsPDF.addSvgAsImage: Invalid measurements", arguments), new Error("Invalid measurements (width and/or height) passed to jsPDF.addSvgAsImage");
     var b = document.createElement("canvas");
@@ -7276,12 +7276,12 @@ function(n) {
       p.addImage(b.toDataURL("image/jpeg", 1), i, s, o, u, f, g);
     });
   };
-}(), Ut.API.putTotalPages = function(n) {
+}(), zt.API.putTotalPages = function(n) {
   var t, r = 0;
   parseInt(this.internal.getFont().id.substr(1), 10) < 15 ? (t = new RegExp(n, "g"), r = this.internal.getNumberOfPages()) : (t = new RegExp(this.pdfEscape16(n, this.internal.getFont()), "g"), r = this.pdfEscape16(this.internal.getNumberOfPages() + "", this.internal.getFont()));
   for (var i = 1; i <= this.internal.getNumberOfPages(); i++) for (var s = 0; s < this.internal.pages[i].length; s++) this.internal.pages[i][s] = this.internal.pages[i][s].replace(t, r);
   return this;
-}, Ut.API.viewerPreferences = function(n, t) {
+}, zt.API.viewerPreferences = function(n, t) {
   var r;
   n = n || {}, t = t || !1;
   var i, s, o, u = { HideToolbar: { defaultValue: !1, value: !1, type: "boolean", explicitSet: !1, valueSet: [!0, !1], pdfVersion: 1.3 }, HideMenubar: { defaultValue: !1, value: !1, type: "boolean", explicitSet: !1, valueSet: [!0, !1], pdfVersion: 1.3 }, HideWindowUI: { defaultValue: !1, value: !1, type: "boolean", explicitSet: !1, valueSet: [!0, !1], pdfVersion: 1.3 }, FitWindow: { defaultValue: !1, value: !1, type: "boolean", explicitSet: !1, valueSet: [!0, !1], pdfVersion: 1.3 }, CenterWindow: { defaultValue: !1, value: !1, type: "boolean", explicitSet: !1, valueSet: [!0, !1], pdfVersion: 1.3 }, DisplayDocTitle: { defaultValue: !1, value: !1, type: "boolean", explicitSet: !1, valueSet: [!0, !1], pdfVersion: 1.4 }, NonFullScreenPageMode: { defaultValue: "UseNone", value: "UseNone", type: "name", explicitSet: !1, valueSet: ["UseNone", "UseOutlines", "UseThumbs", "UseOC"], pdfVersion: 1.3 }, Direction: { defaultValue: "L2R", value: "L2R", type: "name", explicitSet: !1, valueSet: ["L2R", "R2L"], pdfVersion: 1.3 }, ViewArea: { defaultValue: "CropBox", value: "CropBox", type: "name", explicitSet: !1, valueSet: ["MediaBox", "CropBox", "TrimBox", "BleedBox", "ArtBox"], pdfVersion: 1.4 }, ViewClip: { defaultValue: "CropBox", value: "CropBox", type: "name", explicitSet: !1, valueSet: ["MediaBox", "CropBox", "TrimBox", "BleedBox", "ArtBox"], pdfVersion: 1.4 }, PrintArea: { defaultValue: "CropBox", value: "CropBox", type: "name", explicitSet: !1, valueSet: ["MediaBox", "CropBox", "TrimBox", "BleedBox", "ArtBox"], pdfVersion: 1.4 }, PrintClip: { defaultValue: "CropBox", value: "CropBox", type: "name", explicitSet: !1, valueSet: ["MediaBox", "CropBox", "TrimBox", "BleedBox", "ArtBox"], pdfVersion: 1.4 }, PrintScaling: { defaultValue: "AppDefault", value: "AppDefault", type: "name", explicitSet: !1, valueSet: ["AppDefault", "None"], pdfVersion: 1.6 }, Duplex: { defaultValue: "", value: "none", type: "name", explicitSet: !1, valueSet: ["Simplex", "DuplexFlipShortEdge", "DuplexFlipLongEdge", "none"], pdfVersion: 1.7 }, PickTrayByPDFSize: { defaultValue: !1, value: !1, type: "boolean", explicitSet: !1, valueSet: [!0, !1], pdfVersion: 1.7 }, PrintPageRange: { defaultValue: "", value: "", type: "array", explicitSet: !1, valueSet: null, pdfVersion: 1.7 }, NumCopies: { defaultValue: 1, value: 1, type: "integer", explicitSet: !1, valueSet: null, pdfVersion: 1.7 } }, h = Object.keys(u), f = [], g = 0, b = 0, x = 0;
@@ -7354,7 +7354,7 @@ function(n) {
   n.addMetadata = function(i, s) {
     return this.internal.__metadata__ === void 0 && (this.internal.__metadata__ = { metadata: i, namespaceuri: s || "http://jspdf.default.namespaceuri/" }, this.internal.events.subscribe("putCatalog", r), this.internal.events.subscribe("postPutResources", t)), this;
   };
-}(Ut.API), function(n) {
+}(zt.API), function(n) {
   var t = n.API, r = t.pdfEscape16 = function(o, u) {
     for (var h, f = u.metadata.Unicode.widths, g = ["", "0", "00", "000", "0000"], b = [""], x = 0, S = o.length; x < S; ++x) {
       if (h = u.metadata.characterToGlyph(o.charCodeAt(x)), u.metadata.glyIdsUsed.push(h), u.metadata.toUnicode[h] = o.charCodeAt(x), f.indexOf(h) == -1 && (f.push(h), f.push([parseInt(u.metadata.widthOfGlyph(h), 10)])), h == "0") return b.join("");
@@ -7440,7 +7440,7 @@ end`;
       o.text = h;
     } else o.text = s(Object.assign({}, f, { text: u })).text;
   }]);
-}(Ut), /**
+}(zt), /**
  * @license
  * jsPDF virtual FileSystem functionality
  *
@@ -7458,7 +7458,7 @@ function(n) {
   }, n.getFileFromVFS = function(r) {
     return t.call(this), this.internal.vFS[r] !== void 0 ? this.internal.vFS[r] : null;
   };
-}(Ut.API), /**
+}(zt.API), /**
  * @license
  * Unicode Bidi Engine based on the work of Alex Shensis (@asthensis)
  * MIT License
@@ -7615,7 +7615,7 @@ function(n) {
     } else i.text = r.doBidiReorder(s);
     r.setOptions({ isInputVisual: !0 });
   }]);
-}(Ut), Ut.API.TTFFont = function() {
+}(zt), zt.API.TTFFont = function() {
   function n(t) {
     var r;
     if (this.rawData = t, r = this.contents = new Er(t), this.contents.pos = 4, r.readString(4) === "ttcf") throw new Error("TTCF not supported.");
@@ -7782,8 +7782,8 @@ var ql = function(n) {
   }
   return n.encode = function(t, r) {
     var i, s, o, u, h, f, g, b, x, S, p, O, I, R, _, E, X, ot, ut, wt, tt, D, gt, dt, F, P, z, q, at, nt, lt, Z, ft, ht, kt, L, j, M, W, Y, Q, et, rt, At, xt, Ct;
-    switch (q = new Er(), u = Object.keys(t).sort(function(Et, zt) {
-      return Et - zt;
+    switch (q = new Er(), u = Object.keys(t).sort(function(Et, Ut) {
+      return Et - Ut;
     }), r) {
       case "macroman":
         for (I = 0, R = function() {
@@ -8009,7 +8009,7 @@ var ql = function(n) {
     }(), o = this.font.glyf.encode(u, I, p), g = this.font.loca.encode(o.offsets, I), R = { cmap: this.font.cmap.raw(), glyf: o.table, loca: g, hmtx: this.font.hmtx.raw(), hhea: this.font.hhea.raw(), maxp: this.font.maxp.raw(), post: this.font.post.raw(), name: this.font.name.raw(), head: this.font.head.encode(r) }, this.font.os2.exists && (R["OS/2"] = this.font.os2.raw()), this.font.directory.encode(R);
   }, n;
 }();
-Ut.API.PDFObject = function() {
+zt.API.PDFObject = function() {
   var n;
   function t() {
   }
@@ -8481,15 +8481,18 @@ async function Uh(n, t = {}) {
   return (await zh(n, t)).toDataURL();
 }
 function Hh(n, t, r) {
-  const i = new Ut({
-    unit: "pt",
-    orientation: "landscape",
-    ...t
-  });
+  let i = new zt();
   async function s(u = "blob", h = 0, f) {
     const g = Ju(n);
     if (!g) throw new Error("Element not found");
-    const { clientHeight: b, clientWidth: x } = g, S = await Uh(g, f ?? r);
+    const { clientHeight: b, clientWidth: x } = g;
+    i = new zt({
+      unit: "pt",
+      orientation: "landscape",
+      format: [x, b],
+      ...t
+    });
+    const S = await Uh(g, f ?? r);
     return i.addImage(S, "PNG", h, h, x, b), u === "string" ? i.output("datauristring") : u === "arraybuffer" ? i.output("arraybuffer") : u === "url" ? i.output("bloburl") : i.output("blob");
   }
   return {
